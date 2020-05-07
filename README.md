@@ -2,6 +2,8 @@
 
 * 如需使用 last-modified.txt 来获取静态文件所使用的时间戳，请将scripts/pre-commit拷贝至项目根目录下的.git/hooks/中
 * 复制 myproject/settings 内的 sample_secrets.json 为 secrets.json 并进行相应修改
+* scripts 目录下文件仅供参考
+* 如需使用请对 myproject 进行全局替换
 
 
 PostgreSQL指定编码
