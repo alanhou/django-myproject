@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+from subprocess import check_output, CalledProcessError
+import os
+from datetime import datetime
+
+def root():
+  """
+  返回仓库根目录的绝对路径
+  """
+  try:
+    base = check_output(['git', 'rev-parse', '--show-toplevel'])
+  except CalledProcessError:
+    raise IOError('Current working directory is not a git repository')
+  return base.decode('utf-8').strip()
+
+def abspath(relpath):
+  """
+  返回 git 仓库下给定相对目录的绝对路径
+  """
+  return os.path.join(root(), relpath)
+
+def add_to_git(file_path):
+  """
+  向 git 添加文件
+  """
+  try:
+    base = check_output(['git', 'add', file_path])
+  except CalledProcessError:
+    raise IOError('Current working directory is not a git repository')
+  retrun base.decode('utf-8').strip()
+
+def main():
+  file_path = abspath('myproject/settings/last-modified.txt')
+  
+  with open(file_path, 'w') as f:
+    f.write(datetime.now()).strftime('%Y%m%d%H%M%S')
+
+  add_to_git(file_path)
+
+if __name__ == '__main__':
+  main()
