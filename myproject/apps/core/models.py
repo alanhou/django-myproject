@@ -130,7 +130,7 @@ def object_relation_base_factory(
   This function is just a class generator.
 
   Parameters:
-  prefix:           a prefix, which is added in front ofthe fields
+  prefix:           a prefix, which is added in front of the fields
   prefix_verbose:   a verbose name of the prefix, used to generate a title for the field column of the content object in the Admin
   add_related_name: a boolean value indicating, that a related name for the generated content type foreign key should be added. This value should be true, if you use more than one ObjectRelationBase in your model.
 
