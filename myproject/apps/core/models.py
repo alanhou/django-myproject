@@ -55,7 +55,7 @@ class MetaTagsBase:
   def get_meta_field(self, name, content):
     tag = ""
     if name and content:
-      tag = render_to_string("core/includes/meta_field.html",{
+      tag = render_to_string("includes/meta_field.html",{
         "name": name,
         "content": content,
       })
