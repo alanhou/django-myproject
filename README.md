@@ -22,6 +22,27 @@ find . -type d -name "__pycache__" -delete'
 
 彻底避免编译文件的创建，添加环境变量`PYTHONDONTWRITEBYTECODE=1`
 
+### 多语言配置示例
+
+```
+LANGUAGE_CODE = 'en'
+
+# All official languages of European Union
+LANGUAGES = [
+    ("bg", "Bulgarian"),    ("hr", "Croatian"),
+    ("cs", "Czech"),        ("da", "Danish"),
+    ("nl", "Dutch"),        ("en", "English"),
+    ("et", "Estonian"),     ("fi", "Finnish"),
+    ("fr", "French"),       ("de", "German"),
+    ("el", "Greek"),        ("hu", "Hungarian"),
+    ("ga", "Irish"),        ("it", "Italian"),
+    ("lv", "Latvian"),      ("lt", "Lithuanian"),
+    ("mt", "Maltese"),      ("pl", "Polish"),
+    ("pt", "Portuguese"),   ("ro", "Romanian"),
+    ("sk", "Slovak"),       ("sl", "Slovene"),
+    ("es", "Spanish"),      ("sv", "Swedish"),
+]
+```
 
 ## 参考文档
 * [PEP 8](https://www.python.org/dev/peps/pep-0008/)
